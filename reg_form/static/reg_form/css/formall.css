@@ -1,0 +1,17 @@
+.resume_form {
+    border: 0.2rem solid black;
+    background-color: rgb(193, 245, 228);
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 7rem;
+}
+
+.last {
+    height: auto;
+    width: auto;
+    margin-top: 1.3%;
+
+}

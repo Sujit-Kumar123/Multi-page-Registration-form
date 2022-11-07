@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stylebootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'reg_form/css/formall.css'%}">
+    <title>Document</title>
+</head>
+<body>
+ <div class="clearfix">
+    <div class="resume_form">
+        <form action="" method="POST" novalidate enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="cintainer-fluid">
+                <div class="row">
+                    <div class="col-md">{{ form.HSC_Institute_name|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.HSC_Board|as_crispy_field }}</div>
+                    <div class="col-md">{{ form.score_in_HSC|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.SSC_Institute_name|as_crispy_field }}</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md">{{ form.SSC_board|as_crispy_field }}</div>
+                    <div class="col-md">{{ form.score_SSC|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.Currently_pursuing|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{  form.Current_education_institution_name|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.Overall_percentage|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.current_backlog|as_crispy_field }}</div>
+                </div>
+            </div>
+           <!-- <input type='submit' value='Submit'>-->
+            <button type="submit" value="Submit" class="btn btn-outline-success">Submit</button>
+            {% if messages %}
+            {% for message in messages %}
+            <small>
+                {{message}}
+            </small>
+            {% endfor %}
+            {% endif %}
+        </form>
+  </div>
+ </div>
+      <script src="{% static 'js/jQuery.js' %}" ></script>
+      <script src="{% static 'js/popper.js' %}" ></script>
+      <script src="{% static 'js/bootstrapmin.js' %}" ></script>
+</body>
+</html>

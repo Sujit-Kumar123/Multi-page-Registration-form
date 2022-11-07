@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stylebootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'reg_form/css/formall.css'%}">
+    <title>Document</title>
+</head>
+<body>
+ <div class="clearfix">
+    <div class="resume_form">
+        <form action="" method="POST" novalidate enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="cintainer-fluid">
+                <div class="row">
+                    <div class="col-md">{{ form.name|as_crispy_field }}</div>
+                    <div class="col-md last">{{ form.lastname|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.date_of_birth|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.email|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.father_name|as_crispy_field }}</div>
+                    <div class="col-md last">{{ form.fathernamelast|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.mother_name|as_crispy_field }}</div>
+                    <div class="col-md last">{{ form.mothernamelast|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.gender|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.nationality|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.home_Address|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.city|as_crispy_field }}</div>
+                    <div class="col-md">{{ form.country|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.telephone_home|as_crispy_field }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md">{{ form.telephone_mobile|as_crispy_field }}</div>
+                </div>
+            </div>
+           <!-- <input type='submit' value='Submit'>-->
+           <br>
+            <button type="submit" value="Submit" class="btn btn-outline-success">Submit</button>
+            {% if messages %}
+            {% for message in messages %}
+            <small>
+                {{message}}
+            </small>
+            {% endfor %}
+            {% endif %}
+        </form>
+  </div>
+ </div>
+      <script src="{% static 'js/jQuery.js' %}" ></script>
+      <script src="{% static 'js/popper.js' %}" ></script>
+      <script src="{% static 'js/bootstrapmin.js' %}" ></script>
+</body>
+</html>
